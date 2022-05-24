@@ -1,0 +1,87 @@
+html, body {
+  height: 100%;
+}
+
+.menu-bar {
+  height: 25px;
+}
+
+.preRow {
+  overflow: scroll;
+  height: 89%;
+  padding-left: 10px;
+}
+
+footer {
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  z-index: 1500;
+}
+
+.bg-purple {
+  background-color: #9932CC;
+}
+
+.bg-gray {
+  background: rgb(74, 74, 74);
+}
+
+.bg-blue {
+  background: rgb(50, 101, 196);
+}
+
+.bg-red {
+  background: rgb(196, 50, 53);
+}
+
+
+.app-title {
+  margin-left: 25px;
+  font-weight: bold;
+  color: #ffffff;
+  font-size: 20px;
+  white-space: nowrap;
+}
+
+.social {
+  width: 250px;
+  height: 56px;
+  overflow: hidden;
+  transition-property: all;
+  transition-timing-function: ease;
+  transition-duration: 400ms;
+}
+
+.navbar {
+  justify-content: start;
+}
+
+.gradient {
+  display: none;
+}
+
+.gradient-start {
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3));
+}
+
+.gradient-end {
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
+}
+
+.fade-me {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.cell {
+  padding: 15px;
+  background-color: yellow;
+  width: 50px;
+  margin: 1px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.game {
+  margin-top: 50px;
+}
