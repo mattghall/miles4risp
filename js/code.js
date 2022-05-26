@@ -49,11 +49,10 @@ function getSchedule() {
     fetch(SCHEDULE_URL, {})
     .then(function(response) {
       response.text().then(function(text) {
-        var j = JSON.parse(text);
-        schedule = j.dates.reduce(function(map, obj) {
-          map[obj.date] = obj;
-          return map;
-        }, {});
+        schedule = new Map();
+        JSON.parse(text).dates.forEach(object => {
+          schedule.set(object.date, object);
+        });
       });
     })
     .catch(function(err) {
@@ -82,11 +81,11 @@ function getBoxScore(gamePk) {
 }
 
 function getDataForDate(date) {
-  if (!schedule.hasOwnProperty(date)) {
+  if (!schedule.has(date)) {
     console.log("No games played on " + date);
   } else {
     var gamePks = [];
-    var data = schedule[date].games;
+    var data = schedule.get(date).games;
     for (game of data) {
       gamePks.push(game.gamePk);
     }
@@ -207,7 +206,7 @@ function backFillForDate(date) {
 }
 
 function wakeUpAndPostData() {
-  var date = getPreviousDay(new Date()).toISOString().split('T')[0])
+  var date = getPreviousDay(new Date()).toISOString().split('T')[0];
   getDataForDate(date);
 }
 
